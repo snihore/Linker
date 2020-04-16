@@ -7,6 +7,16 @@
     android:background="@android:color/white"
     tools:context=".SplashActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        android:text="Linker"
+        android:layout_centerInParent="true"
+        android:padding="10dp"/>
+
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_btn"
         android:layout_width="wrap_content"

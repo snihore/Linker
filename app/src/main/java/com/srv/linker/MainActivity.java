@@ -175,22 +175,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void pasteLinkToEditText() {
 
-        ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-        String pasteData = "";
+        try{
+            ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+            String pasteData = "";
 
-        if(clipboardManager != null){
+            if(clipboardManager != null){
 
-            ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
+                ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
 
-            if(item != null && item.getText() != null){
+                if(item != null && item.getText() != null){
 
-                pasteData = (String)item.getText();
+                    pasteData = (String)item.getText();
 
-                if(pasteData != null && !pasteData.matches("")){
-                    linkEditText.setText(pasteData);
-                    Toast.makeText(this, "paste it", Toast.LENGTH_SHORT).show();
+                    if(pasteData != null && !pasteData.matches("")){
+                        linkEditText.setText(pasteData);
+                        Toast.makeText(this, "paste it", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -235,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //VIEWS ...
             LinearLayout logOutBtn = (LinearLayout)dialog.findViewById(R.id.logout_btn);
+            LinearLayout aboutBtn = (LinearLayout)dialog.findViewById(R.id.about_btn);
 
             //CLICK EVENTS ...
             logOutBtn.setOnClickListener(new View.OnClickListener() {
@@ -250,6 +255,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(intent);
                     finish();
 
+                }
+            });
+
+            aboutBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+                    dialog.dismiss();
+                    startActivity(intent);
                 }
             });
 

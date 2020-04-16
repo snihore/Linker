@@ -50,6 +50,7 @@ public class CustomListViewTwo extends BaseAdapter {
         TextView urlName = (TextView) viewRow.findViewById(R.id.list_view_item_url_name);
         TextView urlTag = (TextView) viewRow.findViewById(R.id.list_view_item_url_tag);
         TextView urlTimestamp = (TextView)viewRow.findViewById(R.id.list_view_item_url_timestamp);
+        TextView urlUniqueID = (TextView)viewRow.findViewById(R.id.list_view_item_url_id);
 
         if(this.list.size()>0){
             Link link = this.list.get(i);
@@ -61,6 +62,7 @@ public class CustomListViewTwo extends BaseAdapter {
 
                 urlName.setText(link.getUrlName());
                 urlTag.setText(link.getUrlTag());
+                urlUniqueID.setText(link.getUniqueID());
 
                 if(date != null){
 

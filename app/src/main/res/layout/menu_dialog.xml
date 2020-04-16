@@ -33,6 +33,7 @@
         android:layout_height="1dp"
         android:background="@color/grey01"/>
     <LinearLayout
+        android:id="@+id/about_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

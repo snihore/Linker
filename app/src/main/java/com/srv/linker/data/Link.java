@@ -13,6 +13,8 @@ public class Link {
     public Link() {
     }
 
+
+
     public Link(String urlName) throws Exception{
         this.urlName = urlName;
         this.urlTag = "";

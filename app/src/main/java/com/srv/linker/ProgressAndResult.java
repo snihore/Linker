@@ -15,6 +15,19 @@ public class ProgressAndResult{
     private TextView finishTag;
     private ProgressBar progressBar;
 
+    private LinksViewActivity linksViewActivity;
+    private AllTab allTab;
+
+    public ProgressAndResult(Context context, AllTab allTab) {
+        this.context = context;
+        this.allTab = allTab;
+    }
+
+    public ProgressAndResult(Context context, LinksViewActivity linksViewActivity) {
+        this.context = context;
+        this.linksViewActivity = linksViewActivity;
+    }
+
     public ProgressAndResult(Context context, Button btn, ProgressBar progressBar) {
         this.context = context;
         this.btn = btn;
@@ -48,6 +61,21 @@ public class ProgressAndResult{
         }else{
             progressBar.setVisibility(View.INVISIBLE);
             finishTag.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void getDataFromAllTab(){
+
+        if(allTab != null){
+
+            allTab.getData();
+        }
+    }
+
+    public void getDataFromLinksViewActivity(){
+
+        if(linksViewActivity != null){
+            linksViewActivity.getData();
         }
     }
 

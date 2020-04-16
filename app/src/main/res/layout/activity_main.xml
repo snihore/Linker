@@ -159,11 +159,10 @@
                     android:backgroundTint="@color/green01"/>
                 <ImageView
                     android:id="@+id/paste_btn"
-                    android:layout_width="60dp"
+                    android:layout_width="80dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/paste"
+                    android:src="@drawable/paste1"
                     android:background="?android:selectableItemBackground"
-                    android:layout_marginLeft="10dp"
                     android:layout_weight="1" />
             </LinearLayout>
             <TextView

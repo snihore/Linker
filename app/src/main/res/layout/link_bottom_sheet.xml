@@ -8,19 +8,45 @@
     android:layout_marginTop="10dp"
     android:id="@+id/link_bottom_sheet_layout">
 
-    <TextView
-        android:id="@+id/link_bottom_sheet_url"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:textSize="12sp"
-        android:textColor="@android:color/black"
-        android:fontFamily="monospace"
-        android:text=""
+        android:orientation="horizontal"
+        android:gravity="center"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/link_bottom_sheet_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:fontFamily="monospace"
+            android:text="f6a/database/firestore/data~2FLinker~2Fsourabhnihore@gmail.com~2FURLs~2FfedDfQQdjHzKamEYLeI5"
+            android:paddingRight="10dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/link_bottom_sheet_copy"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/copy"/>
+        <ImageView
+            android:id="@+id/link_bottom_sheet_qr"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/qr"/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/link_bottom_sheet_open"
         android:layout_width="match_parent"

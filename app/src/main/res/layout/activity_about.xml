@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".AboutActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/about_actionbar">
+        <ImageView
+            android:id="@+id/go_back_btn03"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/back"
+            android:background="?android:selectableItemBackground"
+            android:padding="18dp"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="About"
+            android:layout_centerInParent="true"
+            android:textSize="30sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/about_actionbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="App Name"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="Linker"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="Version"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="1.0"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey01"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="Developer"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="Sourabh Nihore"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="Contact"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/dev_email_copy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="souravnihore1998@gmail.com"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center_horizontal"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="Linkedin"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/dev_linkedin_copy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:background="?android:selectableItemBackground"
+            android:text="/sourabh-nihore-88957312b/"
+            android:gravity="center_horizontal"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:text="Instagram"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/dev_insta_copy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:background="?android:selectableItemBackground"
+            android:text="/sourabhnihore"
+            android:gravity="center_horizontal"
+            android:padding="10dp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

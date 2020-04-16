@@ -6,6 +6,19 @@
     android:background="@android:color/transparent"
     android:padding="10dp">
 
+    <TextView
+        android:id="@+id/list_view_item_url_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:background="@color/grey01"
+        android:text=""
+        android:visibility="invisible"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
