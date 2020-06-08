@@ -8,21 +8,87 @@
     tools:context=".SplashActivity">
 
     <TextView
+        android:id="@+id/linker_splash_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
         android:textColor="@android:color/black"
         android:textSize="60sp"
-        android:text="Linker"
-        android:layout_centerInParent="true"
+        android:text=" Linker "
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:padding="10dp"/>
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"/>
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingBottom="40dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:inputType="textEmailAddress"
+            android:layout_weight="1"
+            android:backgroundTint="@color/green01"/>
+        <EditText
+            android:id="@+id/password_edit_text"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/grey02"
+            android:inputType="textPassword"
+            android:layout_weight="1"
+            android:backgroundTint="@color/green01"/>
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:visibility="visible"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg01"
+            android:fontFamily="monospace"
+            android:text="SignUp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/login_btn"
+            android:visibility="visible"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_bg01"
+            android:fontFamily="monospace"
+            android:text="LogIn"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/sign_in_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="40dp"/>-->
+
+
 
 </RelativeLayout>

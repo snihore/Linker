@@ -55,9 +55,9 @@ public class LinksViewActivity extends AppCompatActivity implements View.OnClick
 
         //Item Click Event ...
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 TextView url = (TextView)view.findViewById(R.id.list_view_item_url_name);
                 TextView tag = (TextView)view.findViewById(R.id.list_view_item_url_tag);
@@ -74,6 +74,21 @@ public class LinksViewActivity extends AppCompatActivity implements View.OnClick
                     //when Item clicks ...
                     linkBottomSheet(url.getText().toString());
                 }
+
+                return true;
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                TextView url = (TextView)view.findViewById(R.id.list_view_item_url_name);
+
+                if(url != null){
+                    shareURL = url.getText().toString();
+                }
+                openBrowserAndAccessURL();
             }
         });
     }
@@ -257,7 +272,9 @@ public class LinksViewActivity extends AppCompatActivity implements View.OnClick
         try{
             if(!shareURL.matches("")){
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shareURL));
-                bottomSheetDialog.dismiss();
+                if(bottomSheetDialog != null){
+                    bottomSheetDialog.dismiss();
+                }
                 startActivity(intent);
             }else{
                 Toast.makeText(this, "retry", Toast.LENGTH_SHORT).show();
@@ -282,5 +299,15 @@ public class LinksViewActivity extends AppCompatActivity implements View.OnClick
         }catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        shareURL = "";
+        shareTAG = "";
+        shareTIMESTAMP = "";
+        shareUNIQUEID = "";
     }
 }

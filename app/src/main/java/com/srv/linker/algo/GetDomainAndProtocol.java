@@ -52,6 +52,12 @@ public class GetDomainAndProtocol{
 
         if(arr02.length > 0){
 
+            String domain = arr02[0];
+
+            if(domain.substring(0, 4).equals("www.")){
+                return domain.substring(4);
+            }
+
             return arr02[0];
         }
 

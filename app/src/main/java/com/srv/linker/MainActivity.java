@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView pasteBtn;
 
     //DATA VERIABLES ...
-    private GoogleSignInClient googleSignInClient;
+//    private GoogleSignInClient googleSignInClient = null;
     FirebaseAuth mAuth;
 
     @Override
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         firebase();
 
         //SignIn by GOOGLE
-        signInSetUp();
+//        signInSetUp();
 
         if(mAuth.getCurrentUser() != null){
             String email = mAuth.getCurrentUser().getEmail();
@@ -79,14 +79,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAuth = FirebaseAuth.getInstance();
     }
 
-    private void signInSetUp() {
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        googleSignInClient = GoogleSignIn.getClient(getApplicationContext(), gso);
-    }
+//    private void signInSetUp() {
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.default_web_client_id))
+//                .requestEmail()
+//                .build();
+//
+//        googleSignInClient = GoogleSignIn.getClient(getApplicationContext(), gso);
+//    }
 
 
     private void initViews() {
@@ -249,7 +249,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(mAuth.getCurrentUser() != null){
                         mAuth.signOut();
                     }
-                    googleSignInClient.signOut();
+//                    if(googleSignInClient != null){
+//                        googleSignInClient.signOut();
+//                    }
                     Toast.makeText(MainActivity.this, "LOGED OUT", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
                     startActivity(intent);

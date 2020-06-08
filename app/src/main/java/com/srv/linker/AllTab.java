@@ -64,10 +64,10 @@ public class AllTab extends Fragment implements AdapterView.OnClickListener {
         getData();
 
         //list view item click event ...
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 TextView url = (TextView)view.findViewById(R.id.list_view_item_url_name);
                 TextView tag = (TextView)view.findViewById(R.id.list_view_item_url_tag);
@@ -85,6 +85,19 @@ public class AllTab extends Fragment implements AdapterView.OnClickListener {
                     linkBottomSheet(url.getText().toString(), view);
                 }
 
+                return true;
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                TextView url = (TextView)view.findViewById(R.id.list_view_item_url_name);
+
+                if(url != null){
+                    shareURL = url.getText().toString();
+                }
+                openBrowserAndAccessURL();
             }
         });
 
@@ -246,7 +259,11 @@ public class AllTab extends Fragment implements AdapterView.OnClickListener {
         try{
             if(!shareURL.matches("")){
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(shareURL));
-                bottomSheetDialog.dismiss();
+
+                if(bottomSheetDialog != null){
+                    bottomSheetDialog.dismiss();
+                }
+
                 startActivity(intent);
             }else{
                 Toast.makeText(getContext(), "retry", Toast.LENGTH_SHORT).show();
@@ -271,5 +288,15 @@ public class AllTab extends Fragment implements AdapterView.OnClickListener {
         }catch (Exception e){
             Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        shareURL = "";
+        shareTAG = "";
+        shareTIMESTAMP = "";
+        shareUNIQUEID = "";
     }
 }
